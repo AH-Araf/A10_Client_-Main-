@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
+        <div className='footer-container'>
             <p><small>All copyright reserved </small>
             @ MD.Arafat Hossain
             </p>

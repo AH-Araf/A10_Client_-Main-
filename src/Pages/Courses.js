@@ -6,15 +6,14 @@ import LeftSideNav from './LeftSideNav';
 const Courses = () => {
     return (
         <div className='ms-lg-4 me-lg-4 mb-5'>
-            <h1>This is Courses</h1> 
+            <i><h3 className='container2'>Welcome To Our Web Courses Page</h3></i>
                 <Row>
-                    <Col className='d-block col-12 col-lg-4 d-lg-flex justify-content-center cart-courses'>
+                    <Col className='d-block col-12 col-lg-2 d-lg-flex justify-content-center cart-courses'>
                         <LeftSideNav></LeftSideNav>
                     </Col>
-                    <Col className='d-block col-12 col-lg-8 d-lg-flex justify-content-center left-nav-courses'>
+                    <Col className='d-block col-12 col-lg-10 d-lg-flex justify-content-center left-nav-courses'>
                         <CoursesCart></CoursesCart>
                     </Col>
-                    
                 </Row>
         </div>
     );
