@@ -49,4 +49,9 @@
     margin-right: 10px;
     font-weight: 700;
 }
-
+.cart-courses{
+    border: 3px solid yellow;
+}
+.left-nav-courses{
+    border: 3px solid yellow;
+}
