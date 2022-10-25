@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SixCourseCart = ({courses}) => {
     const {id,name, image_url, details} = courses;
-    console.log(courses);
+    
     return (
         <div>
             <div className='six-cart-container'>
@@ -12,7 +12,7 @@ const SixCourseCart = ({courses}) => {
                 <p>
                 {
                         details.length > 250 ?
-                            <>{details.slice(0, 190) + '...'} <Link to={`/news/${id}`}>Read More</Link> </>
+                            <>{details.slice(0, 190) + '...'} <Link to={`/courses/${id}`}>Read More</Link> </>
                             :
                             details
                     }

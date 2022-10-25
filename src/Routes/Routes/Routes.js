@@ -5,6 +5,7 @@ import Courses from "../../Pages/Courses";
 import Home from "../../Pages/Home";
 import Login from "../../Pages/Login";
 import Register from "../../Pages/Register";
+import SingleCart from "../../Pages/SingleCart";
 
 export const routes = createBrowserRouter([
     {
@@ -30,6 +31,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>
+            },
+            {
+               path: '/courses/:id',
+               element: <SingleCart></SingleCart>,
+               loader: async ({params}) =>  fetch(`http://localhost:5000/courses/${params.id}`)
             }
         ]
     },
