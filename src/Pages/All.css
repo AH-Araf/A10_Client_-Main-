@@ -1,0 +1,52 @@
+.container1 img{
+    height: 550px;
+    width: 100%;
+}
+.container1{
+    margin: 0px 60px;
+}
+.container2{ 
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    margin: 0px 60px;
+    color: darkred;
+}
+.footer1{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: black;
+}
+.imageC1{
+    width: 40px;
+    margin-right: 5px;
+}
+.nav-color{
+    color: red;
+}
+.blog-container{
+    margin-right: 15px;
+    text-decoration: none;
+    color: darkred;
+    font-weight: 700;
+    border: 2px solid darkred;
+    padding: 0px 5px;
+    background-color:cadetblue;
+    border-radius: 5px;
+}
+.blog-container:hover{
+    margin-right: 15px;
+    text-decoration: none;
+    color: red;
+    font-weight: 700;
+    border: 2px solid red;
+    padding: 0px 5px;
+    background-color:aquamarine;
+}
+.blog-name{
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
