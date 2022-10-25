@@ -1,6 +1,7 @@
 import React from 'react';
-import { ButtonGroup, ListGroup } from 'react-bootstrap';
+import { ButtonGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import { FaGoogle, FaGithub} from "react-icons/fa";
 import Form from 'react-bootstrap/Form';
 
 const Login = () => {
@@ -22,9 +23,9 @@ const Login = () => {
                 Login
             </Button> <br />
 
-            <ButtonGroup vertical className='mb-5 d-flex justify-content-center'>
-                <Button  className='mb-2' variant="outline-primary">  Login with Google</Button>
-                <Button variant="outline-dark">  Login with Github</Button>
+            <ButtonGroup vertical className='mb-5 d-flex justify-content-center ms-5 me-5'>
+                <Button  className='mb-1' variant="outline-primary"><FaGoogle></FaGoogle> Login with Google</Button>
+                <Button variant="outline-success"><FaGithub></FaGithub>  Login with Github</Button>
             </ButtonGroup>
         </Form>
         </div>
