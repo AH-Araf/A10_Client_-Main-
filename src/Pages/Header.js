@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 import c from '././../assets/images/c.png';
 import { FaUser } from 'react-icons/fa';
-import ReactTooltip from 'react-tooltip';
+import Button from 'react-bootstrap/Button';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 const Header = () => {
     const btnDay =()=>{
@@ -24,6 +26,14 @@ const Header = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+
+    // 
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          {user?.displayName}
+        </Tooltip>
+      );
+    // 
 
     return (
         <div className='navbar-to'>
@@ -57,19 +67,23 @@ const Header = () => {
                             }
 
                         </>
-                        <div data-tip={user?.displayName}>
-                        <ReactTooltip />
+                        
                         <div  to="/profile">
                             {user?.photoURL ?
-                                <Image
-                                    style={{ height: '35px', width:'35px', marginRight: '10px' }}
-                                    roundedCircle
-                                    src={user?.photoURL}>
-                                </Image>
+                                <OverlayTrigger
+                                placement="bottom"
+                                delay={{ show: 250, hide: 400 }}
+                                overlay={renderTooltip}>
+                                <Button className='btn-tooltip' variant="light"><Image
+                                                    style={{ height: '35px', width:'35px', marginRight: '10px' }}
+                                                    roundedCircle
+                                                    src={user?.photoURL}>
+                                                </Image></Button> 
+                                </OverlayTrigger>
                                 : <FaUser></FaUser>
                             }
                         </div>
-                        </div>
+                        
                     </Nav>
 
                     <div className=" text-end">
