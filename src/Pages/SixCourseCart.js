@@ -6,6 +6,7 @@ import Pdf from "react-to-pdf";
 const ref = React.createRef();
 
 
+
 const SixCourseCart = ({courses}) => {
     const {id,name, image_url, details} = courses;
     
