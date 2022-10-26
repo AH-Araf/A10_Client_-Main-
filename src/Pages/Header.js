@@ -1,7 +1,11 @@
 import React from 'react';
-import { Container, Nav, Navbar,  } from 'react-bootstrap';
+import { useContext } from 'react';
+import {  Container, Image, Nav, Navbar,  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 import c from '././../assets/images/c.png';
+import { FaUser } from 'react-icons/fa';
+import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
     const btnDay =()=>{
@@ -11,6 +15,14 @@ const Header = () => {
     const btnDark =()=>{
         document.body.style.backgroundColor= '#1a1728';
         document.body.style.color= 'white';      
+    }
+
+    // AUth
+    const {user, logOut} = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -26,9 +38,40 @@ const Header = () => {
                         <Link className='blog-container' to='/courses'>Courses</Link>
                         <Link className='blog-container'>FAQ</Link>
                         <Link className='blog-container' to='/blog'>Blog</Link>  
-                        <Link className='blog-container' to='/login'>Login</Link> 
-                        <Link className='blog-container' to='/register'>Register</Link> 
+                        
                     </Nav>
+                    <Nav>
+                        <>
+                            {
+                                user?.uid ?
+                                    <>
+                                        
+                                        <Link className='blog-container' onClick={handleLogOut}>Log out</Link> 
+                                        
+                                    </>
+                                    :
+                                    <>
+                                        <Link className='blog-container' to='/login'>Login</Link> 
+                                        <Link className='blog-container' to='/register'>Register</Link> 
+                                    </>
+                            }
+
+                        </>
+                        <div data-tip={user?.displayName}>
+                        <ReactTooltip />
+                        <div  to="/profile">
+                            {user?.photoURL ?
+                                <Image
+                                    style={{ height: '35px', width:'35px', marginRight: '10px' }}
+                                    roundedCircle
+                                    src={user?.photoURL}>
+                                </Image>
+                                : <FaUser></FaUser>
+                            }
+                        </div>
+                        </div>
+                    </Nav>
+
                     <div className=" text-end">
                         <div className="btn-group border border-2 border-warning rounded-3" role="group" aria-label="Basic example">
                             <button onClick={btnDay} id="btn-normal" type="button" className="btn btn-light ">Day🔆</button>
@@ -36,35 +79,7 @@ const Header = () => {
                         </div>
                         
                 </div>
-                    <Nav>
-                        <>
-                            {/* {
-                                user?.uid ?
-                                    <>
-                                        <span>{user?.displayName}</span>
-                                        <Button variant="light" onClick={handleLogOut}>Log out</Button>
-                                    </>
-                                    :
-                                    <>
-                                        <Link to='/login'>Login</Link>
-                                        <Link to='/register'>Register</Link>
-                                    </>
-                            } */}
-
-
-                        </>
-                        {/* <Link to="/profile">
-                            {user?.photoURL ?
-                                <Image
-                                    style={{ height: '30px' }}
-                                    roundedCircle
-                                    src={user?.photoURL}>
-                                </Image>
-                                : <FaUser></FaUser>
-                            }
-                        </Link> */}
-                    </Nav>
-                    
+                     
                 </Navbar.Collapse>
             </Container>
         </Navbar>

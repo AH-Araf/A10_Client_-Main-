@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import CoursesCart from './CoursesCart';
 import LeftSideNav from './LeftSideNav';
 
@@ -15,6 +15,7 @@ const Courses = () => {
                         <CoursesCart></CoursesCart>
                     </Col>
                 </Row>
+                
         </div>
     );
 };

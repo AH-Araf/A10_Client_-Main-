@@ -25,6 +25,7 @@
 .nav-color{
     color: red;
 }
+
 .blog-container{
     margin-right: 15px;
     text-decoration: none;
@@ -69,7 +70,9 @@
     background-color:bisque;
     
 }
-
+.footer-footer{
+    margin-bottom: 60px;
+}
 .display-flex{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -140,4 +143,21 @@
     .single-course-container{
         margin: 30px 10px;   
     }
+}
+.btn-a{
+    text-decoration: none;
+    color: brown;
+    font-weight: 600;
+}
+.loader-r{
+    height: 400px;
+}
+.btn-pdf{
+    border: 2px solid red;
+    margin: 4px 0px;
+    border-radius: 7px;
+}
+.btn-pdf:hover{
+    background-color:aqua;
+    border: 2px solid darkred;
 }
