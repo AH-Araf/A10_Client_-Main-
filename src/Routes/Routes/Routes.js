@@ -8,6 +8,7 @@ import Register from "../../Pages/Register";
 import SingleCart from "../../Pages/SingleCart";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
+
 export const routes = createBrowserRouter([
     {
         path:'/',
