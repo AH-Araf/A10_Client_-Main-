@@ -38,12 +38,12 @@ export const routes = createBrowserRouter([
             {
                path: '/courses/:id',
                element: <SingleCart></SingleCart>,
-               loader: async ({params}) =>  fetch(`http://localhost:5000/courses/${params.id}`)
+               loader: async ({params}) =>  fetch(`https://a10-server-site.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader: async ({params}) =>  fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: async ({params}) =>  fetch(`https://a10-server-site.vercel.app/courses/${params.id}`)
              }
         ]
     },

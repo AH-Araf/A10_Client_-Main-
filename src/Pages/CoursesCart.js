@@ -4,7 +4,7 @@ import SixCourseCart from './SixCourseCart';
 const CoursesCart = () => {
     const [course, setCourse] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/course-api')
+        fetch('https://a10-server-site.vercel.app/course-api')
         .then( res => res.json())
         .then(data => setCourse(data));
     },[])
