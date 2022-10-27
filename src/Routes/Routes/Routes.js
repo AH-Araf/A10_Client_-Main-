@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Blog from "../../Pages/Blog";
+import CheckOut from "../../Pages/CheckOut";
 import Courses from "../../Pages/Courses";
 import Home from "../../Pages/Home";
 import Login from "../../Pages/Login";
@@ -36,9 +37,14 @@ export const routes = createBrowserRouter([
             },
             {
                path: '/courses/:id',
-               element: <PrivateRoute><SingleCart></SingleCart></PrivateRoute>,
+               element: <SingleCart></SingleCart>,
                loader: async ({params}) =>  fetch(`http://localhost:5000/courses/${params.id}`)
-            }
+            },
+            {
+                path: '/checkout/:id',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+                loader: async ({params}) =>  fetch(`http://localhost:5000/courses/${params.id}`)
+             }
         ]
     },
     {path: '*', element: <div><h1>404 Not Found Your Data</h1></div>}
